@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Review - Universal Scraper</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-light">
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+          <div class="card shadow-sm">
+            <div class="card-body p-4">
+              <h1 class="h3">CSV analysis</h1>
+              <p class="text-muted">Website column detected: <strong>{{ website_column }}</strong></p>
+
+              <div class="row g-3">
+                <div class="col-md-3">
+                  <div class="border rounded p-3 bg-white">
+                    <div class="fw-bold">Total rows</div>
+                    <div class="display-6">{{ stats.total_rows }}</div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="border rounded p-3 bg-white">
+                    <div class="fw-bold">Missing</div>
+                    <div class="display-6">{{ stats.missing }}</div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="border rounded p-3 bg-white">
+                    <div class="fw-bold">Invalid</div>
+                    <div class="display-6">{{ stats.invalid }}</div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="border rounded p-3 bg-white">
+                    <div class="fw-bold">Duplicates removed</div>
+                    <div class="display-6">{{ stats.duplicates }}</div>
+                  </div>
+                </div>
+              </div>
+
+              <hr class="my-4" />
+              <h2 class="h5">Cleaned URLs ready to crawl</h2>
+              <p class="text-muted">Total unique URLs: {{ total }}</p>
+              <ul class="list-group mb-4">
+                {% for url in sample_urls %}
+                <li class="list-group-item">{{ url }}</li>
+                {% endfor %}
+              </ul>
+
+              <form method="post" action="{{ url_for('crawl_urls') }}">
+                <input type="hidden" name="run_id" value="{{ run_id }}" />
+                <div class="mb-3">
+                  <label class="form-label" for="batch_size">Batch size</label>
+                  <input
+                    class="form-control"
+                    id="batch_size"
+                    name="batch_size"
+                    type="number"
+                    min="1"
+                    max="100"
+                    value="20"
+                  />
+                </div>
+                <button class="btn btn-success" type="submit">Start crawling</button>
+                <a class="btn btn-link" href="{{ url_for('index') }}">Upload another CSV</a>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
