@@ -7,6 +7,7 @@ import requests
 from bs4 import BeautifulSoup
 
 KEYWORDS = {
+    # English
     "about",
     "contact",
     "company",
@@ -22,18 +23,103 @@ KEYWORDS = {
     "team",
     "privacy",
     "terms",
+    # Hindi
     "संपर्क",
     "हमारे बारे में",
     "उत्पाद",
     "सेवाएं",
+    # Chinese (simplified/traditional)
     "服务",
     "联系我们",
     "关于",
+    "產品",
+    "产品",
+    "公司",
+    "地址",
+    "电话",
+    "郵箱",
+    # Japanese
+    "お問い合わせ",
+    "会社概要",
+    "製品",
+    "サービス",
+    "住所",
+    "電話",
+    # Korean
     "제품",
     "연락처",
-    "公司",
+    "회사",
+    "주소",
+    # Arabic
     "تواصل",
     "من نحن",
+    "خدمات",
+    "منتجات",
+    "شركة",
+    "عنوان",
+    # French
+    "contact",
+    "à propos",
+    "produits",
+    "services",
+    "entreprise",
+    "adresse",
+    # German
+    "kontakt",
+    "unternehmen",
+    "produkte",
+    "dienstleistungen",
+    "adresse",
+    "über uns",
+    # Dutch
+    "contact",
+    "over ons",
+    "producten",
+    "diensten",
+    "bedrijf",
+    "adres",
+    # Russian
+    "контакты",
+    "о нас",
+    "продукты",
+    "услуги",
+    "компания",
+    "адрес",
+    # Indonesian
+    "kontak",
+    "tentang kami",
+    "produk",
+    "layanan",
+    "perusahaan",
+    "alamat",
+    # Spanish
+    "contacto",
+    "sobre nosotros",
+    "productos",
+    "servicios",
+    "empresa",
+    "dirección",
+    # Portuguese
+    "contato",
+    "sobre nós",
+    "produtos",
+    "serviços",
+    "empresa",
+    "endereço",
+    # Italian
+    "contatti",
+    "chi siamo",
+    "prodotti",
+    "servizi",
+    "azienda",
+    "indirizzo",
+    # Turkish
+    "iletisim",
+    "hakkimizda",
+    "urunler",
+    "hizmetler",
+    "sirket",
+    "adres",
 }
 
 EMAIL_PATTERN = re.compile(r"[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}", re.IGNORECASE)

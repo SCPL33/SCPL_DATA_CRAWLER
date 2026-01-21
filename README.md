@@ -9,6 +9,7 @@ This project provides a lightweight UI-driven crawler that accepts any CSV, find
 - Show a summary of how many rows will be crawled.
 - Crawl URLs in batches (default 20) and store batch results as JSON.
 - Only keep pages that look relevant to company/contact/product details.
+- Multilingual relevance matching (common company/contact/product keywords across many languages).
 
 ## Setup
 
