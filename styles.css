@@ -1,0 +1,299 @@
+:root {
+  color-scheme: dark;
+  --bg: #07111f;
+  --bg-soft: #0d1d31;
+  --panel: rgba(16, 33, 54, 0.9);
+  --panel-strong: #142844;
+  --accent: #46f0b0;
+  --accent-2: #52a7ff;
+  --danger: #ff6b6b;
+  --warning: #ffd166;
+  --text: #f5f8ff;
+  --muted: #9db0ca;
+  --line: rgba(255, 255, 255, 0.09);
+  --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, rgba(70, 240, 176, 0.18), transparent 30rem),
+    radial-gradient(circle at 80% 20%, rgba(82, 167, 255, 0.2), transparent 24rem),
+    var(--bg);
+  color: var(--text);
+}
+
+button {
+  border: 0;
+  border-radius: 0.9rem;
+  padding: 0.85rem 1rem;
+  background: linear-gradient(135deg, var(--accent), #2ec7ff);
+  color: #04111c;
+  cursor: pointer;
+  font-weight: 800;
+  transition: transform 160ms ease, filter 160ms ease, opacity 160ms ease;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+button.secondary {
+  background: var(--panel-strong);
+  color: var(--text);
+  outline: 1px solid var(--line);
+}
+
+.app-shell {
+  width: min(1280px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2rem 0 3rem;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 28rem);
+  gap: 1.5rem;
+  align-items: stretch;
+  margin-bottom: 1.5rem;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2.6rem, 7vw, 6rem);
+  line-height: 0.9;
+  letter-spacing: -0.08em;
+}
+
+.subtitle {
+  margin: 0.35rem 0 1rem;
+  color: var(--accent);
+  font-size: clamp(1.15rem, 3vw, 2rem);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.hero-copy {
+  max-width: 48rem;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.eyebrow,
+.advisor-label {
+  margin: 0 0 0.45rem;
+  color: var(--accent-2);
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.advisor-card,
+.panel {
+  border: 1px solid var(--line);
+  border-radius: 1.4rem;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+.advisor-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 12rem;
+  padding: 1.4rem;
+}
+
+.advisor-card p {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.9fr;
+  gap: 1rem;
+}
+
+.panel {
+  padding: 1.25rem;
+}
+
+.command-panel,
+.log-panel {
+  grid-column: 1 / -1;
+}
+
+.panel-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.panel h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.stat-card {
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.stat-label {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.stat-value {
+  margin-top: 0.35rem;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-weight: 950;
+}
+
+.event-banner {
+  margin: 1rem 0;
+  border: 1px solid rgba(255, 209, 102, 0.35);
+  border-radius: 1rem;
+  padding: 1rem;
+  background: rgba(255, 209, 102, 0.1);
+  color: #ffe8a3;
+  font-weight: 800;
+}
+
+.action-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.action-row.compact {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.contract-card,
+.upgrade-card {
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.contract-card h3,
+.upgrade-card h3 {
+  margin: 0 0 0.6rem;
+}
+
+.contract-meta,
+.upgrade-meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.contract-meta strong,
+.upgrade-meta strong {
+  display: block;
+  color: var(--text);
+}
+
+.upgrade-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.upgrade-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: center;
+}
+
+.leaderboard {
+  display: grid;
+  gap: 0.65rem;
+  margin: 0;
+  padding-left: 1.4rem;
+}
+
+.leaderboard li {
+  border-bottom: 1px solid var(--line);
+  padding: 0.65rem 0;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.leaderboard strong {
+  color: var(--text);
+}
+
+.log-panel ul {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 0.5rem;
+  max-height: 18rem;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  list-style: none;
+}
+
+.log-panel li {
+  border-left: 3px solid var(--accent);
+  border-radius: 0.6rem;
+  padding: 0.65rem 0.8rem;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--muted);
+}
+
+.positive {
+  color: var(--accent);
+}
+
+.negative {
+  color: var(--danger);
+}
+
+@media (max-width: 900px) {
+  .hero,
+  .game-grid,
+  .stats-grid,
+  .action-row {
+    grid-template-columns: 1fr;
+  }
+
+  .command-panel,
+  .log-panel {
+    grid-column: auto;
+  }
+}

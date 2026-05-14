@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Supply Chain Wars: Factory Tycoon Arena</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Hybrid Strategy + Idle Tycoon</p>
+          <h1>Supply Chain Wars</h1>
+          <p class="subtitle">Factory Tycoon Arena</p>
+          <p class="hero-copy">
+            Build a manufacturing empire, buy raw material at the right time,
+            run production lines, dispatch orders, and climb the weekly market leaderboard.
+          </p>
+        </div>
+        <section class="advisor-card" aria-live="polite">
+          <span class="advisor-label">AI Business Advisor</span>
+          <p id="advisorMessage">Loading market briefing...</p>
+        </section>
+      </header>
+
+      <main class="game-grid">
+        <section class="panel command-panel">
+          <div class="panel-heading">
+            <p class="eyebrow">Command Center</p>
+            <h2>Factory Dashboard</h2>
+          </div>
+          <div class="stats-grid" id="statsGrid"></div>
+          <div class="event-banner" id="eventBanner"></div>
+          <div class="action-row">
+            <button id="buyMaterialBtn">Buy Raw Material</button>
+            <button id="produceBtn">Run Production</button>
+            <button id="qualityBtn">Quality Check</button>
+            <button id="dispatchBtn">Dispatch Order</button>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-heading">
+            <p class="eyebrow">Customer Pipeline</p>
+            <h2>Active Contract</h2>
+          </div>
+          <article class="contract-card" id="contractCard"></article>
+          <div class="action-row compact">
+            <button id="acceptContractBtn">Accept Contract</button>
+            <button id="newContractBtn" class="secondary">Scout New Lead</button>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-heading">
+            <p class="eyebrow">Growth</p>
+            <h2>Factory Upgrades</h2>
+          </div>
+          <div class="upgrade-list" id="upgradeList"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-heading">
+            <p class="eyebrow">Arena</p>
+            <h2>Weekly Market Battle</h2>
+          </div>
+          <ol class="leaderboard" id="leaderboard"></ol>
+        </section>
+
+        <section class="panel log-panel">
+          <div class="panel-heading">
+            <p class="eyebrow">Operations Feed</p>
+            <h2>Factory Events</h2>
+          </div>
+          <ul id="activityLog"></ul>
+        </section>
+      </main>
+    </div>
+
+    <script src="game.js"></script>
+  </body>
+</html>
